@@ -53,17 +53,19 @@
         $gb =db::getAllRows('select * from garden_bed where garden_id = '. $id);
         $sqft =db::getAllRows('select * from square_foot_item where garden_bed_id in(select id from garden_bed WHERE garden_id = '. $id . ')');
 
-
         foreach($sqft as &$f){
-            $q = "SELECT sum(percent) as total_percent FROM square_foot_item WHERE garden_bed_id= {$f['garden_bed_id']} AND item={$f['garden_bed_id']['item']}  AND end_date > '{$date}' AND start_date <'{$date}'";
-            $sqft_item =db::getSingleRow($q);
-
-            $f['total_percent'] = (isset($sqft_item['total_percent']))? inval($sqft_item['total_percent']) : 0;
+            $q = "SELECT sum(percent) as total_percent FROM square_foot_item WHERE garden_bed_id= {$f['garden_bed_id']} AND item={$f['item']}  AND end_date > '{$date}' AND start_date <'{$date}'";
             
+                       
+                  
+            $sqft_item =db::getSingleRow($q);
+            $f['total_percent'] = (isset($sqft_item['total_percent']))? ((int)$sqft_item['total_percent']) : 0;
+
         }
+        
 
         $garden = (isset($rb[0]) && is_array($rb[0])) ? $rb[0]: false;
-
+        
         $construct = array();
         $construct['garden'] = $garden;
         $construct['beds'] = $gb;

@@ -35,7 +35,7 @@
         </select>
 
     </td>
-    <td class="sqftTable {$bk}">2010-10-10&nbsp;<input type="hidden" id="to_date" value="2010-10-10"/><img src="{$BASE_URL}images/icons/calendar_edit.png"/></td>
+    <td class="sqftTable {$bk}">2010-10-10&nbsp;<input type="hidden" id="to_date" value="2012-10-10"/><img src="{$BASE_URL}images/icons/calendar_edit.png"/></td>
     <td class="sqftTable {$bk}">2011-10-10&nbsp;<input type="hidden" id="from_date" value="2011-10-10"/> <img src="{$BASE_URL}images/icons/calendar_edit.png"/></td>
     <td class="sqftTable {$bk}"><input type="text" style="width:40px;" id="percent" name="percent"/></td>
     <td class="sqftTable {$bk}"><input type="text" style="width:40px;" id="quantity" name="quantity"/></td>

@@ -1,4 +1,11 @@
-
+/**
+ *
+ * Core Urban Garden Manager Front End
+ *
+ *
+ * @author Justin Burger <j@justinburger.com>
+ *
+ */
 
 /**
  * Bed Prototype Class.
@@ -178,6 +185,18 @@ var Garden = Class.create({
             break;
 
             case 'plant_type':
+                      sqft_size = this.sqft_items.size();
+
+                    for(h=0; h<sqft_size; h++){
+                        if(this.sqft_items[h].garden_bed_id == this.beds[bed].id && sqft_item == this.sqft_items[h].item){
+                            if(this.sqft_items[h].total_percent >=100){
+                                return 'sqft_100used';
+                            }else{
+                                return 'sqft_100someAssigned';
+                            }
+
+                        }
+                    }
             break;
 
             case 'date':
