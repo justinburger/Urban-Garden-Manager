@@ -1,18 +1,18 @@
 <?php
 session_start();
 require_once('app/classes/db.abstract.php');
-			
-require '/var/www/lwmvc-read-only/lwmvc.class.php';
+require_once('/var/www/settings/ugm.inc.php');
+require ($settings['lwmvc'] . 'lwmvc.class.php');
 
 $fm = new lwmvc();
 
-$fm->setControllerDir($_SERVER['DOCUMENT_ROOT'] . '/app/controllers');
-$fm->setTemplateDir($_SERVER['DOCUMENT_ROOT'] . '/app/templates');
+$fm->setControllerDir($settings['install_dir'] . 'app/controllers');
+$fm->setTemplateDir($settings['install_dir'] . 'app/templates');
 $fm->setDefaultController('home');
 
-$fm->setFrameworkDir('/var/www/lwmvc-read-only');
+$fm->setFrameworkDir($settings['lwmvc']);
 $fm->setCaptureExternalFormPosts(true);
-$fm->setFileNotFoundURL('/error/e404');
+$fm->setFileNotFoundURL($settings['base_url'].'error/e404');
 
 
 
@@ -29,7 +29,7 @@ if($request['controller'] != 'login' && !isset($_SESSION['user_id'])){
     header('Location:/login/index');
    
 }
-$fm->assignGlobalSmarty('BASE_URL','http://www.urbangardenmanager.com/');
+$fm->assignGlobalSmarty('BASE_URL',$settings['base_url']);
 
 $fm->handleRequest();
 
