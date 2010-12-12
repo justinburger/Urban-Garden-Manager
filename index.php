@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 require_once('app/classes/db.abstract.php');
 require_once('/var/www/settings/ugm.inc.php');
