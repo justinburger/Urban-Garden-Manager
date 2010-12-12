@@ -15,7 +15,7 @@ class login extends controller {
             $id = db::getSingleRow('select id FROM user WHERE email=\'' . $email . '\' AND PASSWORD(\''.$password.'\') = pass');
         
             $_SESSION['user_id'] = $id['id'];
-            header('Location: http://www.urbangardenmanager.com/home');
+            header('Location:/home');
         }
     }
 }
