@@ -5,9 +5,9 @@
 </div>
 <div id="submenu2"">
 <table style="width:100%;">
-    <tr>
+    <tr> 
         <td><h1>Raised Beds (<a style="font-size:13px;" href="/raisedbed/add">Add a new Raised Bed</a>)</h1></td>
-        <td style="tect-align:right;"><strong>Date:</strong> <div style="display:inline;" id="view_date">2010-11-24</div>&nbsp;<img id="calendarButton" src="{$BASE_URL}images/icons/calendar_edit.png"/>  <input type="hidden" name="date" value="2010-11-24" id="date" onchange="$('view_date').update(this.value);"/>
+        <td style="tect-align:right;"><strong>Date:</strong> <div style="display:inline;" id="view_date">2010-11-24</div>&nbsp;<img id="calendarButton" src="{$BASE_URL}images/icons/calendar_edit.png"/>  <input type="hidden" name="date" value="2010-11-24" id="date" onchange="$('view_date').update(this.value); reloadGBL();"/>
     </td>
         <td style="tect-align:right;"><strong>View Type:</strong>
         <select onchange="gbl.gardenObject.handleViewTypeChange(this.value);">
@@ -16,9 +16,8 @@
             <option value="date">View By Date</option>
             <option value="alerts">View Alerts</option>
             <option value="temps">Min Temperature</option>
-
-
-        </select></td>
+        </select>
+       </td>
     </tr>
 </table>
 </div>
@@ -36,8 +35,16 @@ document.observe("dom:loaded", function() {
 
 
   var t=setTimeout("gbl.gardenObject.renderXHTML();",3000)
-});
 
+
+});
+ 
+
+ function reloadGBL(){
+ $('garden-container').update('<h1>Reloading Garden...</h1><p>&nbsp;</p><strong>Give me a sec..</strong>');
+   gbl = new GardenBootLoader(1,'assignments');
+   var t=setTimeout("gbl.gardenObject.renderXHTML();",3000)
+  }
 
 </script>
   <script type="text/javascript">

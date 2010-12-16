@@ -30,7 +30,7 @@
 					<div id="header-toolbar">
 					   <a href="/home" {if $page == 'home'}class="selected_menu"{/if}>Home</a>	&nbsp;&nbsp;&nbsp;&nbsp;					
 					   <a href="/veggies" {if $page == 'veggies'}class="selected_menu"{/if}>Veggies</a>	&nbsp;&nbsp;&nbsp;&nbsp;					
-					   <a href="/garden" {if $page == 'garden'}class="selected_menu"{/if}>Garden</a>	&nbsp;&nbsp;&nbsp;&nbsp;					
+					   <a href="/garden/new" {if $page == 'garden'}class="selected_menu"{/if}>Garden</a>	&nbsp;&nbsp;&nbsp;&nbsp;					
 					   <a href="/categories" {if $page == 'categories'}class="selected_menu"{/if}>Categories</a>	&nbsp;&nbsp;&nbsp;&nbsp;					
 					   <a href="/settings" {if $page == 'settings'}class="selected_menu"{/if}>Settings</a>	&nbsp;&nbsp;&nbsp;&nbsp;					
 					</div>
@@ -39,8 +39,7 @@
 					</div>
 				</div></td>				
 			</tr>
-		</table>
-			
+		</table>			
 			
 
 		</div>

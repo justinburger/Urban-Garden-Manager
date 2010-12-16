@@ -34,7 +34,11 @@ Urban Garden Manager (UGM) is as simple as 1,2,3!<br/>
 
 </p>
 </div>
+<p>&nbsp;</p>
+<h1>Garden Alerts</h1>
+<em>No Alerts Found..</em>
 </div>
 
+<p>&nbsp;</p>
 
 {include file="global/_bottom.tpl"}

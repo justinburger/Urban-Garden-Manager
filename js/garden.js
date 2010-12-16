@@ -68,6 +68,7 @@ var Garden = Class.create({
     this.mode = mode; /* assignments,plant_types,date */
     this.beds = null;
     this.sqft_items = Array();
+    this.view_date = new Date();
 
   },
 
@@ -101,6 +102,8 @@ var Garden = Class.create({
       this.sqft_items = json;
         return true;
     },
+
+
 
  handleLoadResponse: function(transport, json){
     this.name = json.name;
@@ -147,6 +150,13 @@ var Garden = Class.create({
 
   },
 
+
+
+   changeViewDate: function(new_date){
+    this.view_date = new Date(new_date);
+    this.renderXHTML();
+       
+   },
 
     /**
      * Get SQFT Class Name.
