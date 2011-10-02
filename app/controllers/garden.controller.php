@@ -1,14 +1,14 @@
 <?php
 	class garden extends controller{
-		public function action_index(){
-		    $this->assign('page','garden');
-		    $rb =db::getAllRows('select * from garden_bed where garden_id = '. 1 . ' order by name asc');
-		    foreach($rb as &$r){
-		        $rbHTML = array();
-		        $count = 0;
-		        for ($h=1; $h<=$r['height']; $h++){
-		          for ($w=1; $w<=$r['width']; $w++){
-		              $count++;
+        public function action_index(){
+            $this->assign('page','garden');
+            $rb =db::getAllRows('select * from garden_bed where garden_id = '. 1 . ' order by name asc');
+            foreach($rb as &$r){
+                $rbHTML = array();
+                $count = 0;
+                for ($h=1; $h<=$r['height']; $h++){
+                  for ($w=1; $w<=$r['width']; $w++){
+                      $count++;
 		              $rbHTML[$h][$w] = array('id'=>'sqft_' .$count, 'label'=> $count);
 		          }    
 		          $r['rb'] = $rbHTML;
@@ -55,11 +55,21 @@
 
         foreach($sqft as &$f){
             $q = "SELECT sum(percent) as total_percent FROM square_foot_item WHERE garden_bed_id= {$f['garden_bed_id']} AND item={$f['item']}  AND end_date > '{$date}' AND start_date <'{$date}'";
-            
-                       
-                  
+
+
+
             $sqft_item =db::getSingleRow($q);
             $f['total_percent'] = (isset($sqft_item['total_percent']))? ((int)$sqft_item['total_percent']) : 0;
+
+        }
+
+        foreach($sqft as &$f){
+            $q = "SELECT end_date, DATEDIFF(end_date,'{$date}') as days_from_harvest FROM square_foot_item WHERE garden_bed_id= {$f['garden_bed_id']} AND item={$f['item']}";
+
+
+
+            $sqft_item =db::getSingleRow($q);
+            $f['days_from_harvest'] = (isset($sqft_item['days_from_harvest']))? ((int)$sqft_item['days_from_harvest']) : 0;
 
         }
         
