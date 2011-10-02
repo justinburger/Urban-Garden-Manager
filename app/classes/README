@@ -1,0 +1,5 @@
+Class Container for the Urban Garden Manager Project.
+
+Basic Structure is as follows:
+GARDEN->RAISEDBED->SQFT->VEGGIES->ALERTS/COMMENTS
+
