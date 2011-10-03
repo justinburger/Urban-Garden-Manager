@@ -39,8 +39,4 @@ class RaisedBed extends Garden{
 
     /** Array of Sqft Objects. */
     private $sqft_items;
-
-
-
-
 }

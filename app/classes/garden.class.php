@@ -31,6 +31,8 @@
         return $this->raisedBeds[$id];
     }
 
+    public function getAllAlerts(){}  
+
 
 
   }
