@@ -6,7 +6,7 @@
  * A Raised bed is defined as one of many areas within a garden which can be planted. The user has the ability to
  * change the size and segments of a raised bed.
  */
-class RaisedBed extends Garden{
+class RaisedBed{
     /** Height Of the raised bed in Pixels */
     private $height;
 
