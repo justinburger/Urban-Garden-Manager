@@ -33,6 +33,9 @@
 
     public function getAllAlerts(){}  
 
+    public function addRaisedBed($rb){
+        $this->raisedBed[] = $rb;
+    }
 
 
   }

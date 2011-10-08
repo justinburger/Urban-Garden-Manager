@@ -14,7 +14,7 @@ class RaisedBed{
     private $width;
 
     /** Number of roles this bed is split into */
-    private $row;
+    private $rows;
 
     /** Number of columns this bed is split into */
     private $columns;
@@ -39,4 +39,95 @@ class RaisedBed{
 
     /** Array of Sqft Objects. */
     private $sqft_items;
+
+    public function getWidth(){
+        return $this->width;
+    }
+
+    public function setWidth($w){
+        $this->width = $w;
+    }
+
+    public function getHeight(){
+        return $this->height;
+    }
+
+    public function setHeight($h){
+        $this->height = $h;
+    }
+
+    public function getRows(){
+        return $this->rows;
+    }
+
+    public function setRows($rows){
+        $this->rows = $rows;
+    }
+
+    public function getColumns(){
+        return $this->columns;
+    }
+
+    public function setColumns($cols){
+        $this->columns = $cols;
+    }
+
+    public function getName(){
+        return $this->name;
+    }
+
+    public function setName($n){
+        $this->name = $n;
+    }
+
+    public function getDescription(){
+        return $this->description;
+    }
+
+    public function setDescription($description){
+        $this->description = $description;
+    }
+
+    public function getGardenId(){
+        return $this->garden_id;
+    }
+
+    public function setGardenId($id){
+        $this->garden_id = $id;
+    }
+
+    public function getBedId(){
+        return $this->bed_id;
+    }
+
+    public function setBedId($id){
+        $this->bed_id = $id;
+    }
+
+    public function getModifiedTs(){
+        return $this->modified_ts;
+    }
+
+    public function setModifiedTs($ts){
+        $this->modified_ts = $ts;
+    }
+
+    public function getModifiedBy(){
+        return $this->modified_by;
+    }
+
+    public function setModifiedBy($by){
+        $this->modified_by = $by;
+    }
+
+    public function getSqftItems(){
+        return $this->sqft_items;
+    }
+
+    public function addSqftItem($item){
+        $this->sqft_items[] = $item;
+    }
+
+
+
 }

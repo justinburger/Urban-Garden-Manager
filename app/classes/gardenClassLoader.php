@@ -10,6 +10,8 @@
 
 require_once('db.abstract.php');
 require_once('Veggie.class.php');
+require_once('VeggieAlert.class.php');
 require_once('Sqft.class.php');
 require_once('RaisedBed.class.php');
 require_once('garden.class.php');
+require_once('VeggieLookup.class.php');
